@@ -1,0 +1,243 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tutosoftware.ecemexico</groupId>
+  <artifactId>ecemexico</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>ECEMEXICO</name>
+  <properties>
+		<emc.version>0.0.1-SNAPSHOT</emc.version>
+		<spring.version>5.0.7.RELEASE</spring.version>
+		<springdata.version>2.0.8.RELEASE</springdata.version>
+		<springsecurity.version>5.0.6.RELEASE</springsecurity.version>
+		<groovy-all.version>2.4.5</groovy-all.version>
+		<jstl.version>1.2</jstl.version>
+		<jsp-api.version>2.1</jsp-api.version>
+		<servlet-api.version>3.1.0</servlet-api.version>
+		<hibernatevalidator.version>5.3.4.Final</hibernatevalidator.version>
+		<itextpdf.version>5.5.13</itextpdf.version>
+		<jackson-core.version>2.9.5</jackson-core.version>
+	
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencyManagement>
+  <dependencies>
+	
+	
+	 <dependency>
+	<groupId>com.tutosoftware.ecemexico</groupId>
+	<artifactId>ecemexico-core</artifactId>
+	<version>${emc.version}</version>
+	</dependency>
+	
+	
+	
+	 <!-- Spring 5 dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+       
+       <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+	
+	
+	
+	 <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-cassandra</artifactId>
+        <version>${springdata.version}</version>
+    </dependency>
+	
+	
+	 <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+	
+	
+	
+	
+	
+	    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${hibernatevalidator.version}</version>
+       </dependency>
+	
+	
+	
+	
+	   
+	       <!-- Servlet and JSP -->
+        <dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>${jsp-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			
+         <dependency>
+	     <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	   <version>${servlet-api.version}</version>
+        </dependency>
+			
+			
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+			
+			
+			<dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-core</artifactId>
+          <version>${jackson-core.version}</version>
+         </dependency>	
+			
+			
+			
+			<dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-databind</artifactId>
+          <version>${jackson-core.version}</version>
+         </dependency>	
+         
+         
+	
+	     <dependency>
+           <groupId>com.itextpdf</groupId>
+           <artifactId>itextpdf</artifactId>
+          <version>${itextpdf.version}</version>
+         </dependency>	
+         
+	 </dependencies>
+  </dependencyManagement>
+  
+ <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+			        <verbose>true</verbose>
+			        <fork>true</fork>
+			        <executable>${JAVA_HOME}/bin/javac</executable>
+			        <compilerVersion>1.8</compilerVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+		  		<version>2.4.2</version>
+		        <configuration>
+		          <jvm>${JAVA_HOME}/bin/java</jvm>
+		          <forkMode>once</forkMode>
+		        </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.3.1</version>
+				<inherited>true</inherited>
+				<executions>
+					<execution>
+						<id>enforce</id>
+						<configuration>
+							<rules>
+								<DependencyConvergence />
+								<requireJavaVersion>
+									<version>1.8</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		
+		
+		<pluginManagement>
+		    <plugins>
+		      <plugin>
+		        <groupId>org.eclipse.m2e</groupId>
+		        <artifactId>lifecycle-mapping</artifactId>
+		        <version>1.0.0</version>
+		        <configuration>
+		          <lifecycleMappingMetadata>
+		            <pluginExecutions>
+		              <pluginExecution>
+		                <pluginExecutionFilter>
+		                  <groupId>org.apache.maven.plugins</groupId>
+		                  <artifactId>maven-enforcer-plugin</artifactId>
+		                  <versionRange>[1.0.0,)</versionRange>
+		                  <goals>
+		                    <goal>enforce</goal>
+		                  </goals>
+		                </pluginExecutionFilter>
+		                <action>
+		                  <ignore />
+		                </action>
+		              </pluginExecution>
+		            </pluginExecutions>
+		          </lifecycleMappingMetadata>
+		        </configuration>
+		      </plugin>
+		    </plugins>
+		</pluginManagement>
+	</build> 
+ <modules>
+ 	<module>ecemexico-core</module>
+ 	<module>ecemexico-web</module>
+ </modules>
+</project>
