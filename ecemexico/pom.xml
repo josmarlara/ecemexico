@@ -9,7 +9,7 @@
 		<emc.version>0.0.1-SNAPSHOT</emc.version>
 		<spring.version>5.0.7.RELEASE</spring.version>
 		<springdata.version>2.0.8.RELEASE</springdata.version>
-		<springsecurity.version>5.0.6.RELEASE</springsecurity.version>
+		<springsecurity.version>5.2.10.RELEASE</springsecurity.version>
 		<groovy-all.version>2.4.5</groovy-all.version>
 		<jstl.version>1.2</jstl.version>
 		<jsp-api.version>2.1</jsp-api.version>
